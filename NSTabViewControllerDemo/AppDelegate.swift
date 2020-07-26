@@ -7,6 +7,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var tabView: NSTabView!
     @IBOutlet var view1: NSView!
     @IBOutlet var view2: NSView!
+    @IBOutlet var logsTextField: NSTextField!
     var tabViewController: NSTabViewController? = nil
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -22,10 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             label: "Label Dos",
                             identifier: "Identifier Dos")
         
-        print("tab view controller's tab view items: \(String(describing: self.tabViewController?.tabViewItems))")
-        print("tab view's tab view items: \(String(describing: self.tabView?.tabViewItems))")
+        let log = String(format:"• tab view controller's tab view items: \(String(describing: self.tabViewController?.tabViewItems))\n\n• tab view's tab view items: \(String(describing: self.tabView?.tabViewItems))")
         
-        self.tabView .display()
+        self.tabView .display() // does not do any good
+        self.logsTextField.stringValue = log
     }
     
     func addTabViewItem(view: NSView, label: String!, identifier: String!) {
@@ -39,4 +40,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 }
-
