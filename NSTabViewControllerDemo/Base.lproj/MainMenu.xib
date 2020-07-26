@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17132" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,9 +11,12 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSApplication"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NSTabViewControllerDemo" customModuleProvider="target">
             <connections>
+                <outlet property="tabView" destination="81z-3y-lWS" id="91x-kI-98h"/>
+                <outlet property="view1" destination="Kzx-eX-KBh" id="K85-OK-w9f"/>
+                <outlet property="view2" destination="pKI-KM-Gpb" id="neN-lG-TJf"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -677,16 +681,64 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="93" y="-391"/>
         </menu>
         <window title="NSTabViewControllerDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="contentRect" x="335" y="390" width="300" height="100"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView id="81z-3y-lWS">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </tabView>
+                </subviews>
             </view>
+            <point key="canvasLocation" x="-16" y="-253"/>
         </window>
+        <customView id="Kzx-eX-KBh" userLabel="View 1">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9qi-Ng-eTh">
+                    <rect key="frame" x="107" y="20" width="86" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="This is View 1" id="jcx-rL-3pY">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9qi-Ng-eTh" secondAttribute="bottom" constant="20" symbolic="YES" id="4lC-GF-YAl"/>
+                <constraint firstItem="9qi-Ng-eTh" firstAttribute="centerX" secondItem="Kzx-eX-KBh" secondAttribute="centerX" id="Yzb-mi-S0W"/>
+            </constraints>
+            <point key="canvasLocation" x="-16" y="-98"/>
+        </customView>
+        <customView id="pKI-KM-Gpb" userLabel="View 2">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="alz-Of-nl6">
+                    <rect key="frame" x="107" y="20" width="88" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="This is View 2" id="nND-Sc-qJ8">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="alz-Of-nl6" secondAttribute="bottom" constant="20" symbolic="YES" id="ahd-FM-Yau"/>
+                <constraint firstItem="alz-Of-nl6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pKI-KM-Gpb" secondAttribute="leading" symbolic="YES" id="wRI-WY-V1K"/>
+                <constraint firstAttribute="trailing" secondItem="alz-Of-nl6" secondAttribute="trailing" constant="107" id="wbk-wg-Jfz"/>
+            </constraints>
+            <point key="canvasLocation" x="-16" y="46"/>
+        </customView>
     </objects>
 </document>
