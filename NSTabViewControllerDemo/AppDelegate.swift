@@ -7,13 +7,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet var tabView: NSTabView!
     @IBOutlet var view1: NSView!
     @IBOutlet var view2: NSView!
-    @IBOutlet var logsTextField: NSTextField!
     var tabViewController: NSTabViewController? = nil
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.tabViewController = NSTabViewController()
         if let tabViewController = self.tabViewController {
+            /* The following two lines seem redundant, but they are not.
+             Both lines are necessary or the tab view controller will not
+             propagate its tab view items into its tab view. */
             tabViewController.tabView = self.tabView;
+            tabViewController.view = self.tabView
         }
         
         self.addTabViewItem(view: view1,
@@ -22,11 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.addTabViewItem(view: view2,
                             label: "Label Dos",
                             identifier: "Identifier Dos")
-        
-        let log = String(format:"• tab view controller's tab view items: \(String(describing: self.tabViewController?.tabViewItems))\n\n• tab view's tab view items: \(String(describing: self.tabView?.tabViewItems))")
-        
-        self.tabView .display() // does not do any good
-        self.logsTextField.stringValue = log
     }
     
     func addTabViewItem(view: NSView, label: String!, identifier: String!) {

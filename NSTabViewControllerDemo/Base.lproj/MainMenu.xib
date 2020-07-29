@@ -12,10 +12,9 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NSTabViewControllerDemo" customModuleProvider="target">
             <connections>
-                <outlet property="logsTextField" destination="XAV-P1-4r6" id="7TM-uA-Ume"/>
                 <outlet property="tabView" destination="81z-3y-lWS" id="91x-kI-98h"/>
                 <outlet property="view1" destination="Kzx-eX-KBh" id="K85-OK-w9f"/>
                 <outlet property="view2" destination="pKI-KM-Gpb" id="neN-lG-TJf"/>
@@ -688,29 +687,20 @@
         <window title="NSTabViewControllerDemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="300" height="261"/>
+            <rect key="contentRect" x="335" y="390" width="300" height="102"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1025"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="261"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView id="81z-3y-lWS">
-                        <rect key="frame" x="0.0" y="161" width="300" height="100"/>
+                        <rect key="frame" x="0.0" y="2" width="300" height="100"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <font key="font" metaFont="system"/>
                     </tabView>
-                    <textField identifier="LogsTextField" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAV-P1-4r6">
-                        <rect key="frame" x="18" y="20" width="264" height="143"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" selectable="YES" placeholderString="Logs will appear here." id="yTC-Rr-Zvc">
-                            <font key="font" usesAppearanceFont="YES"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-16" y="-172.5"/>
+            <point key="canvasLocation" x="-16" y="-252"/>
         </window>
         <customView id="Kzx-eX-KBh" userLabel="View 1">
             <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
@@ -729,7 +719,7 @@
                 <constraint firstAttribute="bottom" secondItem="9qi-Ng-eTh" secondAttribute="bottom" constant="20" symbolic="YES" id="4lC-GF-YAl"/>
                 <constraint firstItem="9qi-Ng-eTh" firstAttribute="centerX" secondItem="Kzx-eX-KBh" secondAttribute="centerX" id="Yzb-mi-S0W"/>
             </constraints>
-            <point key="canvasLocation" x="-16" y="65"/>
+            <point key="canvasLocation" x="-16" y="-89"/>
         </customView>
         <customView id="pKI-KM-Gpb" userLabel="View 2">
             <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
@@ -749,7 +739,7 @@
                 <constraint firstItem="alz-Of-nl6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pKI-KM-Gpb" secondAttribute="leading" symbolic="YES" id="wRI-WY-V1K"/>
                 <constraint firstAttribute="trailing" secondItem="alz-Of-nl6" secondAttribute="trailing" constant="107" id="wbk-wg-Jfz"/>
             </constraints>
-            <point key="canvasLocation" x="-16" y="210"/>
+            <point key="canvasLocation" x="-16" y="63"/>
         </customView>
     </objects>
 </document>
